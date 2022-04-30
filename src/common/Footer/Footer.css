@@ -1,0 +1,18 @@
+.footer{
+    background-color: black;
+}
+.footer-items{
+    margin: 0 120px;
+    padding: 15px 0;
+    color: gray;  
+}
+@media only screen and (max-width: 576px) {
+    .footer-items{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px;
+        padding: 15px 0;
+        color: gray; 
+        gap: 10px;  
+    }
+}
