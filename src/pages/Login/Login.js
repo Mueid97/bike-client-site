@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import Social from '../../common/Social/Social';
 import auth from '../../firebase.init';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const naviget = useNavigate();
 
     const [
         signInWithEmailAndPassword,
@@ -15,6 +16,17 @@ const Login = () => {
         loading,
         
       ] = useSignInWithEmailAndPassword(auth);
+
+      if(user){
+        naviget('/home');
+    }
+    if (loading) {
+        return <div className="d-flex justify-content-center align-items-center">
+        <div className="spinner-border text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    }
 
       const handleEmail = e =>{
           setEmail(e.target.value);
@@ -43,6 +55,7 @@ const Login = () => {
                     <p style={{color: 'white'}}>Are you New? <Link to='/register' className='btn btn-link text-decoration-none'>Please Register</Link></p>
                 </div>
             </form>
+            <Social></Social>
         </div>
         </div>
     );
