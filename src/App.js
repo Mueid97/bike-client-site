@@ -3,13 +3,17 @@ import './App.css';
 import Footer from './common/Footer/Footer';
 import Header from './common/Header/Header';
 import About from './pages/About/About';
+import AddItem from './pages/AddItem/AddItem';
 import Blogs from './pages/Blogs/Blogs';
 import Home from './pages/Home/Home';
 import Inventory from './pages/Inventory/Inventory';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
+import Products from './pages/Products/Products';
 import Register from './pages/Register/Register';
-import Services from './pages/Services/Services';
+import RequireAuth from './pages/RequireAuth/RequireAuth';
+
 
 function App() {
   return ( 
@@ -18,8 +22,17 @@ function App() {
       <Routes>
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/home' element={<Home></Home>}></Route>
-      <Route path='/services' element={<Services></Services>}></Route>
-      <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+      <Route path='/products' element={<Products></Products>}></Route>
+      <Route path='/product/:productId' element={
+        <RequireAuth>
+          <ProductDetails></ProductDetails>
+        </RequireAuth>
+      }></Route>
+      <Route path='/additem' element={
+        <RequireAuth>
+          <AddItem></AddItem>
+        </RequireAuth>
+      }></Route>
       <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       <Route path='/about' element={<About></About>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>

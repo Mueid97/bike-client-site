@@ -1,13 +1,14 @@
 import React from 'react';
 import Slider from '../../common/Slider/Slider';
+import Products from '../Products/Products';
 import Section1 from '../Section1/Section1';
-import Services from '../Services/Services';
+
 
 const Home = () => {
     return (
         <div>
            <Slider></Slider>
-           <Services></Services>
+           <Products></Products>
            <Section1></Section1>
         </div>
     );
