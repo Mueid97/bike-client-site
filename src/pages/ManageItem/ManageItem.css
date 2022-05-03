@@ -1,0 +1,13 @@
+.manage{
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+}
+.manageitem{
+    display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0 5px 0 5px ;
+}
