@@ -1,12 +1,14 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import socialImg from '../../images/google.png';
 
 const Social = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const naviget = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     let errorHandle;
     if (error) {
         errorHandle = <p style={{color:'gray'}}>Error: {error.message}</p>
@@ -19,7 +21,7 @@ const Social = () => {
       </div>
     }
     if (user) {
-        naviget('/home');
+        naviget(from, { replace: true });
     }
 
     return (

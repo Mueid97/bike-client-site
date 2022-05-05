@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
 
 const ProductDetails = () => {
    const {productId} = useParams();
    const [product, setProduct] = useState({});
+   
    useEffect(()=>{
-       const url = `http://localhost:5000/product/${productId}`;
-       
+       const url = `http://localhost:5000/product/${productId}`;  
        fetch(url)
        .then(res => res.json())
        .then(data => setProduct(data));
@@ -28,7 +29,8 @@ const ProductDetails = () => {
                    
                 </Card.Body>
             </Card>
-            <Button   variant="primary">Deliver</Button>
+            <Button  variant="primary">Deliver</Button>
+            
         </div>
         </div>
     );
