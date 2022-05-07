@@ -49,9 +49,9 @@ const Login = () => {
             <h1 className='text-center' style={{color:'orange'}}>Please Login</h1>
             <form onSubmit={handleLogin}>
                 <label htmlFor="Email" style={{color: 'white'}} >Email</label>
-                <input onChange={handleEmail} className='w-100 mb-3 ps-2' type="email" name="email" placeholder='Your Email' id="" /> <br />
+                <input onChange={handleEmail} className='w-100 mb-3 ps-2' type="email" name="email" placeholder='Your Email' required /> <br />
                 <label htmlFor="password" style={{color: 'white'}}>Password</label>
-                <input onChange={handlePassword} className='w-100 ps-2' type="Password" name="password" placeholder='Your Password' id="" /> <br />
+                <input onChange={handlePassword} className='w-100 ps-2' type="Password" name="password" placeholder='Your Password' required /> <br />
                 <div className='text-center'>
                     <button className='btn btn-warning m-5 w-50' style={{color:'gray'}}>Login</button>
                     <p style={{color: 'white'}}>Are you New? <Link to='/register' className='btn btn-link text-decoration-none'>Please Register</Link></p>
