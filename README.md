@@ -8,3 +8,6 @@ Live Site [Live](https://bikers-app-bd218.web.app/).
 - any one can buy a service.
 - login, sing out avaiable hare.
 - See the about us service.
+
+
+ stackoverflow [Link] (https://stackoverflow.com/questions/72144771/how-to-increase-a-value-of-json-when-product-is-added)
